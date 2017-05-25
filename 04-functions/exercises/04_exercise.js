@@ -4,8 +4,6 @@ Card Game of War Exercise Part 1.
 
 */
 
-var suits = ['hearts', 'clubs', 'spades', 'diamonds']
-var ranks = ['ace', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king']
 
 /*
 
@@ -22,7 +20,40 @@ deckOfCards.
 
 
 
+// for (cardCount = 0; cardCount <= 52; cardCount++) {
 
+var suits = ['hearts', 'clubs', 'spades', 'diamonds']
+var ranks = ['ace', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king']
+var deckArray = []
+
+// const createDeck = (one, two) => {
+
+function createDeck () {
+
+    for (cardCount = 0; cardCount <= ranks.length - 1; cardCount++) {
+      heartGen = ranks[cardCount] + ' of ' + suits[0];
+      deckArray.push (heartGen);
+    }
+
+    for (cardCount = 0; cardCount <= ranks.length - 1; cardCount++) {
+      clubGen = ranks[cardCount] + ' of ' + suits[1];
+      deckArray.push (clubGen);
+    }
+
+    for (cardCount = 0; cardCount <= ranks.length - 1; cardCount++) {
+      spadeGen = ranks[cardCount] + ' of ' + suits[2];
+      deckArray.push (spadeGen);
+    }
+
+    for (cardCount = 0; cardCount <= ranks.length - 1; cardCount++) {
+      diamondGen = ranks[cardCount] + ' of ' + suits[3];
+      deckArray.push (diamondGen);
+    }
+    return deckArray
+  }
+
+var deckOfCards = createDeck();
+// console.log(deckOfCards);
 /*
 
 Write a function called getRandomCard that will return one random
@@ -32,8 +63,22 @@ Don't worry about removing the card from deckOfCards.
 
 */
 
+// function getRandomCard (input)
 
+const getRandomCard = () => {
+  // min = Math.ceil(deckArray);
+  // max = Math.floor(deckArray);
+  let numGen = 0
+  numGen = Math.floor(Math.random() * deckArray.length)
+  return deckArray[numGen]; //assign variables to array indicies because that shit is cray
 
+}
+
+// console.log(getRandomCard()); // you have to log the function because you arent telling it to print
+
+// getRandomCard()
+
+// console.log(pickSomething);
 
 /*
 
@@ -50,7 +95,22 @@ the cards as an array.
 
 
 
+function dealHand (inputNum = 1) {
+  console.log(inputNum);
+  // var returnCard = []
+  // if (typeof inputNum >=  1) {
+  //   returnCard.push (inputNum);
+  // } else if (dealHand(num) === 1) {
+  //     console.log(deckArray[num]);
+  //   }
 
+  // } else if (dealHand(num) > 1) {
+  //     console.log(); //returning cards as an array?
+  //   }
+  }
+
+
+dealHand();
 /*
 
 Create two variables, playerOneCards and playerTwoCards, and
@@ -60,7 +120,10 @@ Deal both playerOneCards and playerTwoCards 7 cards each.
 
 */
 
+// var playerOneCards = { [] };
+// var playerTwoCards = { [] };
 
+//reference the function, pass the values into the above
 
 
 /*
