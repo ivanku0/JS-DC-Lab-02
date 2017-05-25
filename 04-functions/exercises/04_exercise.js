@@ -96,10 +96,13 @@ the cards as an array.
 
 
 function dealHand (inputNum = 1) {
-  console.log(inputNum);
-  // var returnCard = []
-  // if (typeof inputNum >=  1) {
-  //   returnCard.push (inputNum);
+  var returnCard = []
+if (true) {
+
+}
+
+
+  //  returnCard.push (inputNum);
   // } else if (dealHand(num) === 1) {
   //     console.log(deckArray[num]);
   //   }
