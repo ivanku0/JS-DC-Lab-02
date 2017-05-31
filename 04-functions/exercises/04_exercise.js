@@ -64,6 +64,7 @@ Don't worry about removing the card from deckOfCards.
 */
 
 // function getRandomCard (input)
+/*
 
 const getRandomCard = () => {
   // min = Math.ceil(deckArray);
@@ -73,6 +74,29 @@ const getRandomCard = () => {
   return deckArray[numGen]; //assign variables to array indicies because that shit is cray
 
 }
+
+*/
+
+
+//zach's walkthrough
+
+function dealHand (deck, handlength = 1) { //two arguments needed heartGen
+  if ( handlength === 1) {
+    hand = getRandomCard ( deck ) //referencing the previous function
+  } else {
+    hand = [] //empty array because you need multiple cards to return
+    for ( let i = 0; i < handlength, i++ ) {
+      hand.push ( getRandomCard ( deck )) //notice how hand is being used two ways
+    }
+    return hand
+  }
+
+}
+
+dealHand (deckOfCards, 7) //reference the deck, and then the number
+
+
+
 
 // console.log(getRandomCard()); // you have to log the function because you arent telling it to print
 
@@ -95,11 +119,11 @@ the cards as an array.
 
 
 
-function dealHand (inputNum = 1) {
-  var returnCard = []
-if (true) {
-
-}
+// function dealHand (inputNum = 1) {
+//   var returnCard = []
+// if (true) {
+//
+// }
 
 
   //  returnCard.push (inputNum);
@@ -113,7 +137,7 @@ if (true) {
   }
 
 
-dealHand();
+// dealHand();
 /*
 
 Create two variables, playerOneCards and playerTwoCards, and
@@ -129,12 +153,23 @@ Deal both playerOneCards and playerTwoCards 7 cards each.
 //reference the function, pass the values into the above
 
 
+let playerOneCards = dealHand (deckOfCards, 7); //reference th previous function,
+
+let playerTwoCards = dealHand (deckOfCards, 7);
+
+
+
 /*
 
 Write a function called showHand that takes a player's cards as an
 array and prints each card.
 
 */
+
+
+showHand ( playerOneCards )
+
+console.log('you have the following cards: ' + hand.join('\n') ); //the n is a delimitor, and adds a new line between each item
 
 
 

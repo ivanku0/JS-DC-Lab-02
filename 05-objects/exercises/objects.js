@@ -19,20 +19,20 @@ executed before moving on!
  * 1. Anatomy of an Object
  */
 
-// // Declaring our first object
-// const Person = {
-//   'first name': 'Zakk',
-//   lastName: 'Fleischmann',
-//   favoriteColors: 'green',
-//   favoriteNumbers: [7, 8 ,9],
-//   height: {
-//     feet: 6,
-//     inches: 4
-//   },
-//   sayHello: function( name ) {
-//     console.log( 'Hello, ' + (name || 'you') + '! Hope you are well!' )
-//   }
-// }
+// Declaring our first object
+const Person = {
+  'first name': 'Zakk',
+  lastName: 'Fleischmann',
+  favoriteColors: 'green',
+  favoriteNumbers: [7, 8 ,9],
+  height: {
+    feet: 6,
+    inches: 4
+  },
+  sayHello: function( name ) {
+    console.log( 'Hello, ' + (name || 'you') + '! Hope you are well!' )
+  }
+}
 
 
 /*
@@ -40,49 +40,53 @@ executed before moving on!
  */
 
 // // Getting values from our object
-// Person['first name'] // Bracket notation
-// Person.lastName // Dot notation
+Person['first name'] // Bracket notation
+Person.lastName // Dot notation
 
 // Setting values from our object (with reassignment)
-// Person.favoriteColors = 'just green'
-// Person.height.feet = 10
-// Person['height']['inches'] = 6
+Person.favoriteColors = 'just green'
+Person.height.feet = 10
+Person['height']['inches'] = 6 //you can chain these together to get at nested properties. very common*
 
-// console.log( Person.height )
+console.log( Person.height )
 
 // Calling methods
-// Person.sayHello()
+// Person.sayHello() //you need to reference the object, and then call the function! like the log function of console
 
-// Creating new methods
-// Person.grow = function( inches = 2 ) {
-//   let currentHeight = Person.height.feet * 12 + Person.height.inches + inches
-// 
-//   Person.height = {
-//     feet: Math.floor( currentHeight / 12 ),
-//     inches: currentHeight % 12
-//   }
-// 
-// }
-// 
-// console.log( Person.height )
-// console.log( Person.grow( 1 ) )
-// console.log( Person.height )
-// 
+Creating new methods
+Person.grow = function( inches = 2 ) { //adding a new function with the key of grow
+  let currentHeight = Person.height.feet * 12 + Person.height.inches + inches
+
+  Person.height = {
+    feet: Math.floor( currentHeight / 12 ),
+    inches: currentHeight % 12
+  }
+
+}
+
+console.log( Person.height )
+console.log( Person.grow( 1 ) )
+console.log( Person.height )
+
 
 /*
  * Looping Over an Object
  */
 
-// let testObject = {
-  // a: 1,
-  // b: 2, 
-  // c: 3
-// }
-// // Get the object keys
-// console.log( Object.keys( o ) ) // =? ['a', 'b', 'c']
-// 
-// Object.keys( o ).forEach(prop => console.log(`${ prop }: ${ o[prop] }`))
+let testObject = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+// Get the object keys
+console.log( Object.keys( testObject ) ) // =? ['a', 'b', 'c']
 
+Object.keys( testObject ).forEach((prop) => console.log(`key is ${ prop }: ${ testObject[prop] }`))
+//prop is equal to a key inside our project. use bracket notation to look up values. \
+// testObject[ Prop ]
+//forEach is an array method will loop through it, and call a function for each value of an array
+
+//$ is a string interpolator
 
 /*
  * 2. JSON
@@ -100,19 +104,19 @@ executed before moving on!
 
 
 /*
- * 4. Object Oriented Programming 
+ * 4. Object Oriented Programming
  */
 
 class Car {
 
-  constructor( make, model ) {
-    this.make = make
+  constructor( make, model ) { //constructor is what is called every time you create a ew instance of car
+    this.make = make  //these are properties 
     this.model = model
     this.gears = ['P', 'N', 'R', 'D']
     this.currentGear = this.gears[ 0 ]
   }
 
-  shift ( gear = 'P' ) {
+  shift ( gear = 'P' ) { //this declares a new method right here - same as var function()
     // Check to make sure the passed in gear is a real gear:
     if ( this.gears.indexOf( gear ) < 0 ) { gear = 'P'  }
 

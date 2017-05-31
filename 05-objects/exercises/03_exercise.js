@@ -20,3 +20,16 @@ Apple, Red, 0.78
 Nuts, Brown, 2.23
 
 */
+
+
+var myJSON = require('/Users/ivankou/ga-javascript/js-dc-5/05-objects/exercises/data.json')
+
+// console.log(myJSON); this works
+
+console.log( Object.keys (myJSON));
+
+Object.keys( myJSON ).forEach((collect) => console.log("Quick-E-Mart's curent stock"));
+
+// myJSON.foods forEach( collect => console.log(collect));
+
+// FIGURE OUT HOW TO DIAGRAM THIS 

@@ -10,25 +10,25 @@
   Find the sum of all multiples of 3 or 5 below 1000.
 
 */
-let multipleOf3, multipleOf5, iteratiorSum, totalSum
-
-multipleOf3 = 0
-multipleOf5 = 0
-totalSum = 0
-iteratorSum = 0
-
-do {
-    if (iteratorSum < 1000) {
-      totalSum + (multipleOf3 * 3) + (multipleOf5 * 5)
-
-    }
-      else if (iteratorSum === 1000) {
-        console.log(totalSum);
-      }
-      multipleOf3++
-      multipleOf5++
-      iteratiorSum++
-} while (iteratorSum < 1000)
+// let multipleOf3, multipleOf5, iteratiorSum, totalSum
+//
+// multipleOf3 = 0
+// multipleOf5 = 0
+// totalSum = 0
+// iteratorSum = 0
+//
+// do {
+//     if (iteratorSum < 1000) {
+//       totalSum + (multipleOf3 * 3) + (multipleOf5 * 5)
+//
+//     }
+//       else if (iteratorSum === 1000) {
+//         console.log(totalSum);
+//       }
+//       multipleOf3++
+//       multipleOf5++
+//       iteratiorSum++
+// } while (iteratorSum < 1000)
 
 // find the sum of multiples of 3 or 5 below 1000
 // (x + 3) + ([x+1] +3)
@@ -40,3 +40,7 @@ do {
 // }
 //   else {
 //     console.log(myBros[homieCount])}
+
+for ( let i = 0; o < 10; i++ ) {
+  
+}
