@@ -52,6 +52,9 @@ let documentHeadings = document.querySelectorAll('.heading')
 
 for (let i = 0; i < documentHeadings.length; i++ ) {
   let tocClone = documentHeadings[i].cloneNode(true);
+  //call individual elements with documentHeadings[i]
+  //if we don't pass true to .cloneNode - that will not be a deep clone and not copy the child text
+
   tableOC.appendChild( tocClone );
 
   // let createClone = tableOC.appendChild( tocClone );
@@ -59,6 +62,20 @@ for (let i = 0; i < documentHeadings.length; i++ ) {
   // document.createElement("a");
   tableOC.appendChild( tocClone ).textContent += (' - Chapter ' + i)
 
+  //documentHeadings [i].id = "id" + i //you can do this instead of textContent
+  //you can also use setAttribute
+  //need to append clone to atag
+
+  let link = document.createElement('a')
+
+  // dot (.) whatever allows you to edit "classes" which are the tags here
+
+  link.href = '#' + documentHeadings [ i ].id
+
+  //then append atag to ToC
+
+  link.appendChild( clone )
+  //tableOC.appendChild ( ??? )
 
 }
 
@@ -72,7 +89,11 @@ Bonus, make each item of the ToC a link to that heading on the page.
 //USE ANCHORLINKS => append clone to anchor?
 
 /*
-1. add links - add links to
+1. add links - add links to ??? --
+
+
+
+
 
 
 /*
