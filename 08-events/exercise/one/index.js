@@ -12,6 +12,9 @@ Discuss Together
 
 */
 
+let counter = document.querySelector('.js-button')
+counter.addEventListener ('click', function() { })
+counter.onclick = function () {}
 
 
 /*
@@ -28,3 +31,19 @@ the value of counterIndex is incremented by 1 and the new value is added to the
 page
 
 */
+
+let myCounter = document.querySelector('h1')
+let counterIndex = 0
+
+myCounter.innertext += counterIndex
+
+// myCounter.append('Counter: ' + computerIndex)
+
+myCounter.textContent = `Counter: ${ counterIndex }`
+//
+
+console.log(myCounter);
+
+counter.addEventListener('click', function(){
+  counterIndex ++
+  myCounter.textContent = `Counter: ${ counterIndex }`} )

@@ -24,6 +24,15 @@ Hint: you can call .querySelector on a node you've already retrieved from the DO
 
 */
 
+//js- is a common convention to ensure we don't apply any styling to js-gallery
+//you can have two classe ID in a HTML element "c-gallery js-gallery"
+
+//you use gallery.querySelectorAll because we know its in the document
+
+let gallery = document.querySelector('.js-gallery')
+let galleryItems = document.querySelectorAll('.js-gallery-item')
+
+//you could not use gallery.getElementsByClassName -- these are ONLY methods of document Objectives but not individual nodes
 
 
 /*
@@ -44,7 +53,12 @@ To get the width, try .getBoundingClientRect() or .offsetWidth.
 
 */
 
+let slideCount = galleryItems.length
+let slideWidth = galleryItems[ 0 ].offsetWidth
 
+// console.log(slideWidth.offsetWidth); //returns an object of all the attributes of the object
+
+// .offsetWidth produces 1000 (just a number)
 
 /*
 
@@ -67,8 +81,14 @@ Create a function called transitionSlide that, for now, just
 
 */
 
+//setInterval takes a function and an internval -- calls a function at the interval until it stops
 
+// no need to call the function, just REFERENCE it (without () )
+let slideInterval = setInterval(transitionSlide, 5000)
 
+// function transitionSlide() {
+//     console.log('called!');
+//   }
 /*
 
 Step 4:
@@ -91,3 +111,24 @@ Inside transitionSlide() we need to do two things:
 Hint: delta should always be a negative number
 
 */
+
+let currentSlide = 1
+function transitionSlide () {
+
+if ( currentSlide < slideCount ) {
+
+//adding .style allows you to edit the CSS element
+
+  gallery.style.transform = `translateX(${ slideWidth * currentSlide }px)`
+  currentSlide++
+
+} else {
+
+  //how do we go back to zero
+
+  gallery.style.transform = "translateX(0)"
+  currentSlide = 1
+
+  }
+
+}

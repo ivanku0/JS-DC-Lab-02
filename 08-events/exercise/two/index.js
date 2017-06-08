@@ -14,8 +14,11 @@ Get an array of all the buttons on the screen. Write an event handler that just
 buttons and attach our event handler to each button
 
 */
-
-
+// // dis correct tho
+// let firstButton = document.querySelector (".js-button")
+// firstButton.addEventListener ("click", function ( event ) {
+//   console.log(event);
+// })
 
 /*
 
@@ -24,6 +27,18 @@ around the event object
 
 */
 
+// function eventHandler () {
+//   console.log('You clicked something');
+// }
+
+let allButtons = document.querySelectorAll('.js-button')
+
+//reference event handler instead of declaring a function multiple times
+
+// for ( var i = 0; i < allButtons.length; i++ ) {
+//     allButtons[i].addEventListener('click', eventHandler);
+// }
+
 
 
 /*
@@ -31,8 +46,35 @@ around the event object
 Refactor your event handler so that it `console.log`s the target subobject
 
 */
+//
+// let title = document.querySelector('h1')
+// let counterIndex = 0
+//
+// title.innertext = `Counter: ${ counterIndex }`
+//
+// function eventHandler ( event ) { //ref the event // parseInt makes the number safer?
+//   let incrementer = parseInt(event.target.dataset.incrementer); //calls the increment attr of the data obejcto f the event
+//   counterIndex += incrementer //updates counterindex with incrementer value
+// }
+
+let title = document.querySelector('h1')
+let counterIndex = 0
 
 
+
+let buttons = document.querySelector('.js-buttons')
+
+//lets click on a parent container, to pass one single event listener / event
+
+buttons.addEventListener('click', function ( e ) {
+  console.log('clicked');
+
+  if ( e.target.tagName === 'BUTTON') {
+  let incrementer = parseInt ( e.target.dataset.incrementer, 10)
+  counterIndex += incrementer
+  title.innertext = `Counter: ${ counterIndex } ` // this isn't working 
+  }
+} )
 
 /*
 
