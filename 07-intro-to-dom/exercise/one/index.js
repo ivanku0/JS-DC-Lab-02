@@ -11,16 +11,35 @@ Getting stuff from the DOM
 
 */
 
-
+//
 // Get #title
 // var title = document.getElementById('title')
-// or document.querySelector('title')
+const title = document.querySelector('#title');
 
+console.dir(title);
 
 // Get the text of #title
 // console.log( title ) // will print the html element
-// console.log( title.textContent ) // prints the text
-// console.log( typeof title.textContent ) // string
+console.log( title.textContent ) // prints the text
+console.log( typeof title.textContent ) // string
+
+//
+// const pTagz = document.querySelectorAll('p');
+//
+//
+// const classParagraph = document.querySelectorAll('.paragraph');
+//
+// const firstPragraph = document.querySelector('#first-paragraph');
+//
+// console.log(pTagz)
+// console.log(classParagraph)
+// console.log(firstPragraph);
+//
+//
+//
+//
+//
+
 
 
 /*
@@ -30,8 +49,8 @@ Setting stuff in the DOM
 */
 
 // Change the text of #title
-// title.textContent = 'New Test Title' // replaces the current title
-// title.textContent += ' test' // adds to teh curent title
+title.textContent = 'New Test Title' // replaces the current title
+title.textContent += ' test' // adds to teh curent title
 
 
 // Change the styeling of an element

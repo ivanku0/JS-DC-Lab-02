@@ -55,7 +55,7 @@ for ( let i = 0; i < 2500; i++) {
   let square = document.createElement('div')
   square.className = 'square'
   canvas.appendChild( square )
-  setnewColor()
+
 
   // when i do this, i get one pixel ?
   // let findSquare = document.querySelectorAll('.square');
@@ -105,6 +105,8 @@ hints:
 
 */
 
+let currentColor = 'green'
+let brush = document.querySelector('.brush') //this was missing
 
 let submitButton = document.querySelector('#set-color')
 // console.log(submitButton); //button value is not equivalent to form submit - how do we get it?
@@ -113,16 +115,16 @@ submitButton.addEventListener('click', function( e ) {
     // console.log(e.target.nodeName); //logs button name
 
     if (e.target.nodeName === 'BUTTON') { //validating a button was pressed
-      let currentColor = document.querySelector('#color-field').value
-      // console.log("currentColor:", currentColor)
+      currentColor = document.querySelector('#color-field').value
+      console.log("currentColor:", currentColor)
 
       // console.log(currentColor); it works!
-      let brush = document.querySelector('.brush') //need to ref brush class
+        //need to ref brush class which is above
       // console.log(brush);
 
       // currentColor = e.target.querySelector('input').value
 
-      brush.style.background = currentColor //set new value
+      currentColor = brush.style.background//set new value
 
 
 
@@ -159,24 +161,25 @@ Hints:
 
 
 //having trouble referencing colors
+//
+// function setnewColor () {
+//   // console.log("setnewColor called")
+//   let brushColor = document.querySelector('.brush')
+//   // let currentColor = document.querySelector('#color-field')
+//   // console.log("current color:", currentColor)
+//   let findSquare = document.querySelectorAll('.square')
+//
+//   // canvas.addEventListener('hover', function () {
+//   //   console.log("hover")
+//   //   let brush = document.querySelector('.brush')
+//   //   console.log("findSquare.style: ", findSquare.style)
+//   //   findSquare.style.background = brushColor.style.background
+//   //
+//   //   return currentColor
+//   // })
+// }
 
-function setnewColor () {
-  // console.log("setnewColor called")
-  let brushColor = document.querySelector('.brush')
-  // let currentColor = document.querySelector('#color-field')
-  // console.log("current color:", currentColor)
-  let findSquare = document.querySelectorAll('.square')
-
-  // canvas.addEventListener('hover', function () {
-  //   console.log("hover")
-  //   let brush = document.querySelector('.brush')
-  //   console.log("findSquare.style: ", findSquare.style)
-  //   findSquare.style.background = brushColor.style.background
-  //
-  //   return currentColor
-  // })
-}
 
 
-
-canvas.addEventListener('mouseover',function (e){e.target.style.backgroundColor = currentColor})
+canvas.addEventListener('mouseover',function (e)
+{e.target.style.background = currentColor})

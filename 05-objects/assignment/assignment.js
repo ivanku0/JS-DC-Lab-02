@@ -32,20 +32,35 @@ make sure you're getting what you expect. You should get something like:
 
 */
 
-//
-let cardCreate = {
-  suitAttr: suits,
-  rankAttr: ranks,
-  scoreAttr: rankScores,
-  titleAttr: function(rankInput = 0, suitInput = 0){
-    let cardGen;
-    cardGen = ranks[rankInput] + ' of ' + suits[suitInput];
-    return cardGen;
-    }
-}
+//original one
+// let cardCreate = {
+//   suitAttr: suits,
+//   rankAttr: ranks,
+//   scoreAttr: rankScores,
+//   titleAttr: function(rankInput = 0, suitInput = 0){
+//     let cardGen;
+//     cardGen = ranks[rankInput] + ' of ' + suits[suitInput];
+//     return cardGen;
+//     }
+// }
 
 // console.log(cardCreate.titleAttr());
 // //
+
+//based off solution
+
+class Card { //create a class
+  constructor (rank, suit) { //constructing a object with...
+    this.suit = suit //take on suit
+    this.rank = rank //take on the rank
+    this.score = rankScores [ rank ] //take on the rank score with the index value of rank
+    this.title = `${rank} of ${suit}` //concatonate the two rank and suit phrases into string
+  }
+}
+
+let queenOfHearts = new Card ('queen', 'hearts') //set variable by creating new construction of function, with queen rank and heart suit
+console.log( queenOfHearts);
+
 
 /*
 
@@ -58,6 +73,37 @@ card object from above. Someone should not be able to create a new
 deck of 52 cards if the deck's `cards` array already has cards in it
 
 */
+
+// based off solution
+
+class cardDeck {
+  constructor () {
+    this.cards = [] //constructor gets its own function
+  }
+
+    createNewDeck() { //this also gets its own?
+        for (let i = 0; i < suits.length; i++) {
+          // second, loop through the ranks
+          for (let j = 0; j < ranks.length; j++) {
+            // create a string representing a card and push it into
+            // our final array
+            // i.e. 'ace of hearts'
+            this.cards.push( new Card( ranks[j], suits[i]) ) //reference this function, variable, push output of Card function as it loops
+            // return cards // return not needed?
+            }
+          }
+        }
+      }
+
+let testDeck = new cardDeck() //create varibale to store a new instance of carddeck class
+testDeck.createNewDeck() //run the function stored in createnewdeck that is a part of cardDeck object
+
+console.log( testDeck );
+
+
+
+
+// before solution
 
 
 /*
@@ -91,23 +137,23 @@ deck of 52 cards if the deck's `cards` array already has cards in it
 //
 // console.log(deckCards.populate());
 
-
-var deckCards = {
-  populate: function() {
-    let cards = [];
-    while (cards.length <= 51) {
-    cards = cardCreate.titleAttr() + cards;
-    return cards
-        }
-      }
-      }
+//
+// var deckCards = {
+//   populate: function() {
+//     let cards = [];
+//     while (cards.length <= 51) {
+//     cards = cardCreate.titleAttr() + cards;
+//     return cards
+//         }
+//       }
+//       }
 
 
 
 // let deckPop = deckCards.cards
-
-console.log(deckCards.populate(2, 4));
-
+//
+// console.log(deckCards.populate());
+//
 
 
 
@@ -144,7 +190,19 @@ Instantiate two instances of your player class.
 
 */
 
+//from the solution
 
+class Player { //create a new class with player
+  constructor ( username ) { //that constructs an object with user-inputted argument of username
+    this.username = username //username attribute is equal to user input
+    this.hand = [] //hand is an empty array ready to be stored
+  }
+}
+
+const p1 = new Player ('Rockman') //set var that is equal to new instance of player class, with argument name
+const p2 = new Player ('Roll')
+
+console.log(p1, p2);
 
 /*
 

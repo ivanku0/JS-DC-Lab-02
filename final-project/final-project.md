@@ -58,6 +58,15 @@ Celebrity follower app that allows users to easily pull all social media data fr
 ##### Idea 3
 Friend locator site that allows users to see how far away they are from their friends.
 
+#### Idea 4
+Developer learning kit - submit pieces of code - create a "vocabulary" dashboard, that tells you, what you know by submitting code into it. leverages external high charts to make a learning dashboard visualization that links you to pertinent queries (stackoverflow) and in-page resources?
+
+##### Idea 5
+Gamified workout logger / text-based RPG
+
+##### Idea 6
+Alwaus blue simulator from silicon valley
+
 ---
 
 ### Project Feedback + Evaluation

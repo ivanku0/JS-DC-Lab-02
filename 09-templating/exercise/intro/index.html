@@ -11,7 +11,18 @@
     <div class="content">
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.js"></script>
-    <script src="app.js"></script>
+    <script id="profile" type="text/x-handlebars-template"> <!-- to ref a template, and not call it. you can now do handlebars here -->
+
+      <div class="profile">
+           <img src="{{ person.profPic }}">
+           <h1>{{ person.name.first }} {{ person.name.last }}</h1>
+         </div>
+       </script>
+    </div>
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script> <!-- handlebars ref-->
+    <script src="app.js"></script> <!--for our code-->
   </body>
 </html>
