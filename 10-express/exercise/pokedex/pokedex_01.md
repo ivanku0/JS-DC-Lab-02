@@ -20,3 +20,7 @@ By this point you should be able to navigate to the root/index of your applicati
 ## Bonus
 1. Instead of using the ID in the route for an individual pokemon, how might we get a pokemon by it's name? I.e. `localhost:3000/bulbasaur`
 2. Build out a route that groups pokemon by their types, i.e. `localhost:3000/grass` lists all pokemon of the `grass` type.
+
+TWO ROUTES NEEDED
+1 - Homepage
+2 - /POKEMON : ID - use param to figure out what pokemon then pass that object into our template

@@ -1,0 +1,43 @@
+<!-- Build the layout for the page you want to see with template-->
+
+<h1>All the original legitimate pokemon {{ title }}  </h1>
+Let's play pokemons!
+<!--reference external json-->
+
+1. need to template in html what we want to select
+2. create the handlebars template to list each item from object
+3. create links for each object link name
+4. render html to update to new html that focused on template containing pokemon information
+
+<li class="pokemon-list">
+  {{#each pokedexObj.pokemon}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+
+<b>Current Questions:</b>
+<ol>
+
+  <li>How do I reference the JSON file here? </li>
+  <li>What should I be rendering in `app.render` </li>
+  <li>I don't fully get the relationship btw home and main</li>
+  <li>Should I edit my handlebar templates in HTML?</li>
+
+
+</ol>
+
+
+{{#each pokemon}}
+  {{id}} - <a href="/pokemon/{{id}}">{{name}}</a> <br>
+{{/each}}
+
+<!--
+
+    <script id="to-do-template" type="text/x-handlebars-template">
+          <ul id="todo-list">
+              {{#each todos}}
+                <li class="todo-list-item">{{this}}</li>
+              {{/each}}
+          </ul>
+      </script> -->
