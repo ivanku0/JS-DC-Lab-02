@@ -14,22 +14,49 @@ app.set ('view engine', 'handlebars')
 app.engine('handlebars', hbs({defaultLayout: 'main'}))
 
 
-//create route to respond to client and pass in data
+//create route for main page
 app.get ('/', function( req, res ) {
 
   // Read database by searching for anything that matches the schema
-  TodoItem.find( {}, function ( err, todoList) {
+  Entry.find( {}, function ( err, todoList) {
 
     // Render the page, passing in the database data
     res.render('home', { todoList })
   })
 })
 
-//above renders home page when '/' root is requested. How do i render or reference the database?
+//we need to post new data to the database with this
+
+app.post('/addNew', function( req, res ) {
+
+  const currentEntry = new Entry({
+    title: req.body.title,
+    isComplete: false
+  })
+
+  //this pushes it from our server and inserts it into our database
+  currentEntry.save(function(err) {
+    if (err) throw err;
+
+    //redirects user to homepage
+    res.redirect('/')
+
+    console.log(currentEntry);
 
 
-//NEXT TO DO CREATE A BUNCH OF ROUTES FOR THE URLS - HANDLEBARS HTML LINKS WILL REFLECT THESE PATHS TOO. REF THE EXERCISE FROM CLASS
+    });
 
+})
+
+//create route to render add new task
+app.get ('/addNew', function( req, res ) {
+
+    // Render the page, passing in the database data
+    res.render('addNew')
+  })
+
+
+//above renders home page when '/' root is requested. How do i render or reference the database
 
 //listen for requests on port 3000
 app.listen(3000, function () {
@@ -67,15 +94,26 @@ app.use (bodyParser.urlencoded({
 // now require the jS file from the models folder
 const Entry = require ('./models/todo.js')
 
-// reference schema to create something
-const taskOne = new Entry ({
-  title: 'My first task',
-  isComplete: false
+// // reference schema to create something
+// const taskOne = new Entry ({
+//   title: 'My first task',
+//   isComplete: false
+//
+// })
+//
+// // save the new object to the database
+// taskOne.save(function(err) {
+//   if (err) throw err;
+//   });
 
-})
+// // confirming it works + it has unique iD
+// console.log('logging taskOne obj ' + taskOne);
 
-// save the new object to the database
-taskOne.save
 
-// confirming it works + it has unique iD
-console.log('logging taskOne obj ' + taskOne);
+Entry.find({}, function(err, entries) {
+  if (err) throw err;
+
+  // object of all the users
+  console.log(entries);
+  // console.log(taskOne);
+});

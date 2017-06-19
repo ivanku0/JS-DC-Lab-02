@@ -23,4 +23,4 @@ const todoSchema = new Schema( {
 
 const Entry = mongoose.model ('Entry', todoSchema)
 
-module.export = Entry()
+module.exports = Entry

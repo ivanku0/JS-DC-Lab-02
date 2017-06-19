@@ -3,7 +3,7 @@
  * Mark to dos as completed and delete to dos.
  *
  * In order to do this, we'll need to adapt our data a bit
- * so that to dos are represented by an object in our todos 
+ * so that to dos are represented by an object in our todos
  * array.
  *
  * Once we've done that, we need to change our template to
