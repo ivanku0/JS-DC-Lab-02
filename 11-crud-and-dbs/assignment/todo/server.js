@@ -26,22 +26,25 @@ app.get ('/', function( req, res ) {
 })
 
 //we need to post new data to the database with this
+// this doesn't work! i don't see my console log here
 
 app.post('/addNew', function( req, res ) {
 
-  const currentEntry = new Entry({
+  //this is supposed to callback a new instance of the schema, and save it.... 
+  let currentEntry = new Entry({
     title: req.body.title,
     isComplete: false
   })
 
+    console.log(currentEntry);
   //this pushes it from our server and inserts it into our database
   currentEntry.save(function(err) {
     if (err) throw err;
 
+
     //redirects user to homepage
     res.redirect('/')
 
-    console.log(currentEntry);
 
 
     });
