@@ -5,5 +5,37 @@
 
 <p></p>
 <div id='editContainer'>
-Something not right? <a href="/artists/editArtist/{{ _id }}">Edit Artist Information</a>
+Artist info not right? <a href="/artists/editArtist/{{ _id }}">Edit Artist Information</a>
+</div>
+
+<div id="commentbox">
+
+<h3>What do people think about {{name}}?</h3>
+<ul class="people_list">
+
+
+
+  {{#each comments}}
+
+    <li>{{this.comments}}</li>
+
+  {{else}}
+
+    <i>No comments right now. Add the first!</i>
+
+  {{/each}}
+
+
+
+
+</ul>
+
+<strong>Add your own thoughts below</strong>
+<p></p>
+  <form id="commentform" method="post">
+    <textarea rows="8" cols="80" name="comments"></textarea>
+<p></p>
+  <button type="submit">Add Comment</button>
+  </form>
+
 </div>

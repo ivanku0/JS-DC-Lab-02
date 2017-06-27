@@ -9,6 +9,7 @@ const artistSchema = new Schema ({
   bio: String,
   artistImage: String,
   album: String,
+  comments: Array
 })
 
 //create a new object with schema

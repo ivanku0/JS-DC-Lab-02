@@ -1,0 +1,54 @@
+#title {
+  text-align: center;
+  font-family: 'comic' ;
+
+}
+
+#nav li {
+  text-align: center;
+  text-decoration: none;
+  font-family: "Impact";
+  display: inline;
+  border: 5px;
+  color: white;
+  border-color: red;
+  background-color: black;
+  padding: 20px;
+  position: relative;
+  margin-top: 10px;
+
+}
+
+#nav li a {
+  color: hotpink;
+}
+
+
+.artist-list {
+  background-color: darkgray;
+  padding: 10px;
+  margin:10px;
+}
+
+.artist-list li {
+  text-decoration: none;
+  border: 3px;
+  color: red;
+  background-color: black;
+  border: color: white;
+  padding: 25px;
+  border-radius: 2px;
+  display:inline-flex;
+
+}
+
+.artist-list h2 {
+  text-align: center;
+
+}
+
+
+.artist-list a {
+  color: white;
+
+}

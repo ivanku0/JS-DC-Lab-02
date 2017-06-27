@@ -6,8 +6,11 @@ const bodyParser= require ('body-parser')
 
 const app = express()
 
-//bodyParser
+//ref css
+app.use(express.static('public'))
+// app.use(express.static('/styles'+ '/public'));
 
+//bodyParser
 app.use( bodyParser.urlencoded({ extended: true }))
 
 
@@ -62,6 +65,22 @@ app.get('/artists/:id', ( req, res ) => {
   })
 })
 
+//post comments to artist array
+
+app.post('/artists/:id', ( req, res ) => {
+
+  Artist.findById( req.params.id, ( err, post ) => {
+
+    post.comments.push( req.body )
+    post.save()
+
+    //does not render page with info
+    res.render( 'artists/artistDetail', { post: post } )
+  })
+
+})
+
+
 //render artist edit page with params
 app.get('/artists/editArtist/:id', ( req, res ) => {
   Artist.findOne({ '_id': req.params.id }, ( err, artist ) => {
@@ -85,24 +104,7 @@ app.post('/artists/editArtist/:id', ( req, res ) => {
 
   })
 
-    // console.log( artist )
-    // res.render('artists/editArtist/', artist)
-    // res.redirect(`/`)
-
-
-  })
-
-
-
-
-
-// //render artist edit page (OG)
-// app.get('/artists/editArtist', function( req, res ) {
-//   res.render('artists/editArtist')
-// })
-
-
-
+})
 
 //creating simple listening server
 app.listen (3000, function () {
