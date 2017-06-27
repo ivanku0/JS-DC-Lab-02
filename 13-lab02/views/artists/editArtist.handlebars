@@ -1,0 +1,50 @@
+<!--This is the edit artist page-->
+
+<h2>Edit Artist: {{name}}</h2>
+Update the fields below to change the fate of your artist
+<p></p>
+<form id="edit-artistform" method="post">
+    <div>
+
+        <strong>Current Artist Name:</strong> {{name}}<br>
+        <label for="name">Update artist name</label>
+        <br>
+        <input type="text" id="name" name="name" value ="{{name}}">
+    </div>
+    <p></p>
+
+    <div>
+        <strong>Current Artist Album:</strong> {{album}}<br>
+        <label for="name">Update Artist Album</label>
+        <br>
+        <input type="text" id="album" name="album" value="{{album}}">
+    </div>
+    <p></p>
+
+    <div>
+        <strong>Current Artist Biography</strong> <br>
+        <blockquote>
+          {{bio}}
+        </blockquote>
+        <label for="mail">Update Artist Biography</label>
+        <br>
+          <textarea id="bio" name="bio">{{bio}}</textarea>
+    </div>
+    <p></p>
+
+      <div>
+
+
+         <strong>Current Artist Image:</strong><br>
+         <img src="{{artistImage}}" alt="damn bruh nada"><br>
+         <label for="name">Update Artist Image</label>
+         <br>
+         <input type="text" id="album" name="aristImage">
+
+      </div>
+        <p></p>
+        <button type="submit">Save</button>
+
+
+    </div>
+</form>

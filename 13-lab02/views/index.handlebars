@@ -1,0 +1,21 @@
+<!--
+<strong>test zone</strong>
+<ol>
+
+  <li>list of artists</li>
+
+  <li>list of artists</li>
+
+  <li>list of artists</li>
+
+  <li>list of artists</li>
+<li><a href="/artists/editArtist">edit this artist</a></li>
+</ol>
+
+-->
+
+<h2>View my fvrt rtsts</h2>
+
+{{#each artistList }}
+      <a href="/artists/{{ _id }}"><li>{{name}} - {{album}}</a></li>
+{{/each}}
