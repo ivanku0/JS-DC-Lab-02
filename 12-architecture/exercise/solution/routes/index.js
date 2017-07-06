@@ -9,7 +9,7 @@ appRouter.get('/', ( req , res ) => {
   // list every article
   Post.find({}, ( err, posts ) => {
 
-    res.render('index', { posts: posts })
+    res.render('index')
 
   })
 

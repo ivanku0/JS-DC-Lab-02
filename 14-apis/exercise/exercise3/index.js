@@ -12,7 +12,19 @@ app.get('/', function(req, res){
 })
 
 app.get('/pokemon/:pokeId', function( req, res ) {
-  // Make a request to the Pokemon API using request
+  // Make a GET request to the Pokemon API using request
+  request.get(`http://pokeapi.co/api/v2/pokemon/${req.params.pokeId}`, (err, response, body) => {
+    //obj that reps the pokemon
+    let data = JSON.parse ( body )
+
+    console.log(data);
+
+    //pass it into res.render function
+    res.render ('pokemon') {
+      name: data.name
+    }
+
+  })
 
 })
 

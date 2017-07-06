@@ -12,3 +12,18 @@ We want to build a client side only application to let users explore pokemon:
 
 Bonus:
 If you used `XMLHttpRequest()`, then try it with `fetch()`; if you used `fetch()`, then try it with `XMLHttpRequest()`
+
+---
+
+Same as previous project = show three starter pokemon on main page
+Beneath that, create an input field, that says now show your favorite.
+user input = generate pokemo, render page that shows pokemon beneath it
+include a view details page in that pokemon descriptor below it
+
+go to a separate page with just that pokemon and more details.
+
+"Create your ideal party"
+
+[bulba] [charm] [squirt]
+
+Add more 

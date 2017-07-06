@@ -1,0 +1,33 @@
+<h1>Welcome to my pokemon party generator</h1>
+<p></p>
+
+<p></p>
+<form action="/" method="post">
+<label for="party"><strong>Enter your party's name below</strong></label>
+<br>
+<input type="text" name="party">
+<p></p>
+Please select one of the following three starter pokemon to begin:
+
+<ol>
+  <li>Bulbasaur</li>
+  <li>Charmander</li>
+  <li>Squirtle</li>
+</ol>
+
+<p></p>
+<label for="pokemonID"><strong>Add a pokemon by ID</strong></label>
+<input type="text" name="pokeID">
+
+<button type="submit">Continue</button>
+</form>
+
+<p></p>
+
+<strong>View your current party below</strong>
+
+{{#each pokeParty }}
+
+      <li><a href="/viewpokemon/{{name}}">{{name}}</a> with a power level of {{_id}}</li>
+
+{{/each}}

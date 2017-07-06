@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,11 +44,38 @@
 
         // 1. Using XMLHttpRequest()
 
+        //crete a new instance ...
+        let request = new XMLHttpRequest( )
+
+        // this is one way, event listener is the other way
+        request.onreadystatechange = handleRequest //all one word all lowercase   - pass reference to function add event listener
+
+        // checking for 'load' here is checking for a ready state of 4
+        request.addEventListener('load', handleRequest) //event listener helps you know when to do something/complete event
+
+        request.open ( 'GET', url ) //type of request we want to make ? get! to get weather
+
+        request.send() //this actually makes the request
+
+        function handleRequest() {
+          if (request.readyState === 4){
+          let response = JSON.parse ( request.response )
+          console.log( response ); //ready state change will be changing frequently
+        }
+      // }
 
         // 2. Using fetch()
-
-
-      })
+      //
+      //     fetch(url)
+      //       .then( response => {
+      //         return response.json( )
+      //       })
+      //       .then ( json => {
+      //         console.log( json );
+      //       })
+      //
+      //
+      // })
     </script>
   </body>
 </html>
